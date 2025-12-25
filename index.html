@@ -435,6 +435,123 @@ footer{
   font-size:12px;
   letter-spacing:1.5px;
 }
+/* =======================
+   RESPONSIVE MOBILE
+   ======================= */
+@media (max-width: 768px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  /* SECTION */
+  section{
+    min-height:auto;
+    padding:90px 16px 60px;
+  }
+
+  /* COVER */
+  .cover{
+    padding:100px 20px 60px;
+  }
+
+  .cover h1{
+    font-size:28px;
+    line-height:1.4;
+  }
+
+  /* NAV */
+  .nav{
+    gap:6px;
+    padding:8px;
+    overflow-x:auto;
+  }
+  .nav a{
+    font-size:11px;
+    padding:6px 10px;
+    white-space:nowrap;
+  }
+
+  /* MEMPELAI */
+  .couple-wrapper{
+    flex-direction:column;
+    gap:26px;
+  }
+
+  .and{
+    font-size:28px;
+  }
+
+  .photo-frame{
+    width:150px;
+    height:150px;
+  }
+
+  /* JOURNEY */
+  .journey{
+    gap:26px;
+  }
+
+  .journey-item{
+    padding:22px;
+  }
+
+  .journey-item img{
+    max-height:200px;
+  }
+
+  .journey-item h3{
+    font-size:16px;
+  }
+
+  /* GALLERY */
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    height:220px;
+  }
+
+  /* AKAD */
+  .akad-item h3{
+    font-size:16px;
+  }
+
+  .address{
+    font-size:13px;
+  }
+
+  /* MAP */
+  .map-wrapper iframe{
+    height:260px;
+  }
+
+  /* GIFT */
+  .gift-card{
+    padding:28px 22px;
+  }
+
+  .bank-number{
+    font-size:18px;
+  }
+
+  /* MUSIC BUTTON */
+  .music-btn{
+    width:46px;
+    height:46px;
+    font-size:16px;
+  }
+}
+@media (max-width: 1024px){
+  section{
+    max-width:100%;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 
 
 </style>
