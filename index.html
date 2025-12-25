@@ -552,6 +552,32 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 }
+/* =======================
+   NAV OFFSET FIX (FINAL)
+   ======================= */
+
+/* default desktop */
+section{
+  scroll-margin-top: 90px;
+}
+
+/* mobile */
+@media (max-width: 768px){
+  section{
+    scroll-margin-top: 70px;
+  }
+}
+
+/* fallback tambahan */
+html{
+  scroll-padding-top: 90px;
+}
+
+@media (max-width:768px){
+  html{
+    scroll-padding-top: 70px;
+  }
+}
 
 
 </style>
