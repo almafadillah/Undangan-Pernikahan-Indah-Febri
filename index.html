@@ -653,7 +653,7 @@ section:not(.cover)::before{
       rgba(255,255,255,.65),
       rgba(255,255,255,.65)
     ),
-    url("image/background new.jpg") top center / 700px repeat;
+    url("image/download (1).jpg") top center / 700px repeat;
 
 
   border-radius:28px;
@@ -665,6 +665,71 @@ section:not(.cover) > *{
   position:relative;
   z-index:1;
 }
+
+/* COUNTDOWN ACARA */
+.countdown-wrapper{
+  margin:40px auto 10px;
+  text-align:center;
+}
+
+.countdown-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  margin-bottom:20px;
+  color:var(--primary);
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.time-box{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(10px);
+  padding:16px 18px;
+  border-radius:18px;
+  min-width:80px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.time-box span{
+  font-size:26px;
+  font-weight:600;
+  display:block;
+}
+
+.time-box small{
+  font-size:12px;
+  letter-spacing:1px;
+  opacity:.7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .countdown-title{font-size:18px}
+  .time-box{min-width:70px;padding:14px}
+  .time-box span{font-size:22px}
+}
+
+.bank-logo{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffffff,#ffffff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 18px;
+}
+
+.bank-logo img{
+  width:42px;
+  height:auto;
+}
+
 
 </style>
 
@@ -701,7 +766,7 @@ section:not(.cover) > *{
     <!-- MEMPELAI WANITA -->
     <div class="couple-card bride">
       <div class="photo-frame">
-        <img src="image/WANITA REV.jpg" alt="Indah Nur’aini">
+        <img src="image/Indah2.JPG" alt="Indah Nur’aini">
       </div>
       <h3>Indah Nur’aini</h3>
       <p class="parent">
@@ -718,13 +783,13 @@ section:not(.cover) > *{
     <!-- MEMPELAI PRIA -->
     <div class="couple-card groom">
       <div class="photo-frame">
-        <img src="image/PRIA REV.jpg" alt="Febriansyah">
+        <img src="image/Febri2.JPG" alt="Febriansyah">
       </div>
       <h3>Febriansyah</h3>
       <p class="parent">
         Putra dari<br>
         Bapak Santawi<br>
-        &amp; Ibu Safudoh
+        &amp; Ibu Rohilah (Almh)
       </p>
     </div>
 
@@ -819,6 +884,30 @@ section:not(.cover) > *{
 <!-- AKAD & RESEPSI -->
 <section class="fade" id="details">
   <h2>Akad & Resepsi</h2>
+  <!-- COUNTDOWN ACARA -->
+<div class="countdown-wrapper">
+  <h3 class="countdown-title">Menuju Hari Bahagia</h3>
+
+  <div class="countdown">
+    <div class="time-box">
+      <span id="days">00</span>
+      <small>Hari</small>
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <small>Jam</small>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <small>Menit</small>
+    </div>
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <small>Detik</small>
+    </div>
+  </div>
+</div>
+
   <div class="divider"><span></span></div>
 
   <div class="akad-card">
@@ -853,16 +942,18 @@ section:not(.cover) > *{
   <div class="divider romantic-divider"><span></span></div>
 
   <p class="gift-desc">
-    Doa restu Anda adalah hadiah terindah bagi kami.<br>
-    Namun apabila berkenan memberikan tanda kasih,
-    kami sediakan informasi berikut:
+    Doa restu adalah untaian doa yang indah bagi kami.<br>
+Apabila berkenan berbagi tanda kasih,<br>
+kami menerimanya dengan penuh rasa syukur dan bahagia.
   </p>
 
   <div class="gift-card">
-    <div class="bank-logo">🏦</div>
+    <div class="bank-logo">
+  <img src="image/BANKBRI.jpg" alt="Logo Bank BRI">
+</div>
 
-    <p class="bank-name">Bank BCA</p>
-    <p class="bank-number" id="rekening">1234567890</p>
+    <p class="bank-name">Bank BRI</p>
+    <p class="bank-number" id="rekening">0188 0102 7693 533</p>
     <p class="bank-owner">a.n. Indah Nur’aini</p>
 
     <button class="btn gift-btn"
@@ -883,7 +974,12 @@ section:not(.cover) > *{
     style="border:0;border-radius:20px"></iframe>
 </section>
 
-<footer>Terima kasih atas doa dan restunya 🤍</footer>
+<footer>Merupakan suatu kebahagiaan dan kehormatan bagi kami<br>
+apabila Bapak/Ibu/Saudara/i <br>
+berkenan hadir untuk memberikan doa dan restu.<br>
+
+Atas perhatian dan kehadirannya,
+kami ucapkan terima kasih. 🤍</footer>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox"><img id="lbImg"></div>
@@ -923,6 +1019,30 @@ document.querySelectorAll('.gallery img').forEach(img=>{
   img.onclick=()=>{lbImg.src=img.src;lb.classList.add('show')}
 });
 lb.onclick=()=>lb.classList.remove('show');
+/* COUNTDOWN */
+const weddingDate = new Date("February 4, 2026 08:00:00").getTime();
+
+const countdownTimer = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance <= 0) {
+    clearInterval(countdownTimer);
+    document.querySelector(".countdown-wrapper").innerHTML =
+      "<h3 class='countdown-title'>Hari Bahagia Telah Tiba 💍</h3>";
+    return;
+  }
+
+  document.getElementById("days").innerText =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText =
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("minutes").innerText =
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("seconds").innerText =
+    Math.floor((distance % (1000 * 60)) / 1000);
+}, 1000);
+
 </script>
 
 </body>
